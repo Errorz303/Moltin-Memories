@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "memories:block/soul_beet_stage_2"
+  }
+}

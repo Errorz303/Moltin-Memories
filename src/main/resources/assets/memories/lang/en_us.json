@@ -1,0 +1,37 @@
+{
+  "item.memories.shine_ingot": "Shine Ingot",
+
+  "block.memories.ancient_salvia": "Ancient Salvia",
+  "block.memories.antique_roses": "Antique Roses",
+
+  "block.memories.molten_molt": "Molten Molt",
+  "block.memories.cooled_molt": "Cooled Molt",
+  "item.memories.molting_blade": "Molting Blade",
+
+  "block.memories.molten_egg": "Molten Egg",
+
+  "item.memories.badger_spawn_egg": "Basalt Badger Spawn Egg",
+  "item.memories.molt_spawn_egg": "Molt Spawn Egg",
+
+  "item.memories.molting_blade.tooltip": "Heated by a dying star",
+  "item.memories.molting_ingot": "Molt Ingot",
+
+  "item.memories.soul_pepper": "Soul Pepper",
+  "item.memories.soul_beet": "Soul Beet",
+  "item.memories.soul_beet_seeds": "Soul Beet Seeds",
+
+  "trim_material.memories.cooled_molt": "Cooled Molt Material",
+  "trim_material.memories.magma": "Magma Cream Material",
+  "trim_material.memories.shine": "Shine Ingot Material",
+  "trim_material.memories.sculk": "Echo Shard Material",
+  "trim_material.memories.breeze": "Breeze Rod Material",
+  "trim_material.memories.prismarine": "Prismarine Shard Material",
+
+  "entity.memories.molt": "Molt",
+  "entity.memories.basalt_badger": "Basalt Badger",
+
+  "item.memories.shine_brush": "Shine Brush",
+
+  "death.attack.memories.molt" : "%1$s was pummeled to death"
+
+}

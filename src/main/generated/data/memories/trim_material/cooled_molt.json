@@ -1,0 +1,9 @@
+{
+  "asset_name": "cooled_molt",
+  "description": {
+    "color": "#486470",
+    "translate": "trim_material.memories.cooled_molt"
+  },
+  "ingredient": "memories:cooled_molt",
+  "item_model_index": 0.3
+}

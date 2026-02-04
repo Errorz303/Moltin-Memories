@@ -1,0 +1,9 @@
+{
+  "parent": "memories:block/molten_block",
+  "textures": {
+    "top": "memories:block/molten_molt_emissive",
+    "top_emissive": "memories:block/molten_molt_test",
+    "side": "memories:block/molten_molt_emissive",
+    "side_emissive": "memories:block/molten_molt_test"
+  }
+}

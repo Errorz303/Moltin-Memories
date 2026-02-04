@@ -1,0 +1,29 @@
+{
+	"format_version": "1.21.11",
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "memories:block/molten_egg_unmelted_top",
+		"1": "memories:block/molten_egg_unmelted_west",
+		"2": "memories:block/molten_egg_unmelted_east",
+		"3": "memories:block/molten_egg_unmelted_north",
+		"4": "memories:block/molten_egg_unmelted_south",
+		"5": "memories:block/molten_egg_unmelted_bottom",
+		"particle": "memories:block/molten_egg_unmelted_top"
+	},
+	"elements": [
+		{
+			"from": [2, 0, 3],
+			"to": [14, 13, 13],
+			"rotation": {"angle": 0, "axis": "y", "origin": [2, 0, 3]},
+			"faces": {
+				"north": {"uv": [0, 2, 12, 16], "texture": "#3"},
+				"east": {"uv": [0, 2, 11, 16], "texture": "#2"},
+				"south": {"uv": [0, 2, 12, 16], "texture": "#4"},
+				"west": {"uv": [0, 2, 11, 16], "texture": "#1"},
+				"up": {"uv": [0, 0, 12, 10], "texture": "#0"},
+				"down": {"uv": [0, 0, 12, 10], "texture": "#5"}
+			}
+		}
+	],
+	"display": {}
+}

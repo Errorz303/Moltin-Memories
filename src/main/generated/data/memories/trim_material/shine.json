@@ -1,0 +1,9 @@
+{
+  "asset_name": "shine",
+  "description": {
+    "color": "#FFA3F3",
+    "translate": "trim_material.memories.shine"
+  },
+  "ingredient": "memories:shine_ingot",
+  "item_model_index": 1.0
+}

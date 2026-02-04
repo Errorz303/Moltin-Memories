@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "S": {
+      "item": "memories:ancient_salvia"
+    }
+  },
+  "pattern": [
+    "S"
+  ],
+  "result": {
+    "count": 6,
+    "id": "minecraft:light_blue_dye"
+  }
+}

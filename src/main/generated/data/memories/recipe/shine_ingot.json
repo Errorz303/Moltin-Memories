@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "S": {
+      "item": "minecraft:iron_ingot"
+    },
+    "E": {
+      "item": "minecraft:amethyst_shard"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "SEE",
+    "EE "
+  ],
+  "result": {
+    "count": 4,
+    "id": "memories:shine_ingot"
+  }
+}

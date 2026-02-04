@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "minecraft:block/end_portal_frame"
+    },
+    "lit=true": {
+      "model": "minecraft:block/end_portal_frame_filled"
+    }
+  }
+}

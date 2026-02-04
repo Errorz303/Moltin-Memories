@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "memories:block/soul_beet_stage0"
+    },
+    "age=1": {
+      "model": "memories:block/soul_beet_stage1"
+    },
+    "age=2": {
+      "model": "memories:block/soul_beet_stage2"
+    },
+    "age=3": {
+      "model": "memories:block/soul_beet_stage3"
+    }
+  }
+}
