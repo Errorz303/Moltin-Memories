@@ -21,8 +21,9 @@ public class MemoryItems {
     public static final Item SHINE_BRUSH = registerItem("shine_brush",  (new MemoryBrushItem((new Item.Settings()).maxDamage(128), 2)));
 
     public static final Item MOLTING_BLADE = registerItem("molting_blade",
-            new MoltingBlade(ToolMaterials.NETHERITE, new Item.Settings()
-                    .attributeModifiers(MoltingBlade.createAttributeModifiers(ToolMaterials.NETHERITE, 2, -2.3f)).fireproof()));
+            new MoltingBlade(ModToolMaterials.MOLTING, new Item.Settings()
+                    .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.MOLTING, 2, -2.3f))));
+
     public static final Item BASALT_BADGER_SPAWN_EGG = registerItem("badger_spawn_egg",
             new SpawnEggItem(ModEntities.BASALT_BADGER, 0x89878f, 0xe96748, new Item.Settings()));
     public static final Item MOLT_SPAWN_EGG = registerItem("molt_spawn_egg",

@@ -5,6 +5,7 @@ import net.errorz.memories.entity.ModEntities;
 import net.errorz.memories.entity.custom.BasaltBadgerEntity;
 import net.errorz.memories.entity.custom.MoltingEntity;
 import net.errorz.memories.item.MemoryItems;
+import net.errorz.memories.item.MemoryTab;
 import net.errorz.memories.world.ModLootTableModifiers;
 import net.errorz.memories.world.gen.BasaltSpawner;
 import net.errorz.memories.world.gen.ModFlowerGeneration;
@@ -31,6 +32,7 @@ public class AntiqueMemories implements ModInitializer {
 
         MemoryBlocks.registerModBlocks();
         MemoryItems.registerModItems();
+        MemoryTab.registerItemGroups();
         ModEntities.registerModEntities();
         ModLootTableModifiers.modifyLootTables();
 

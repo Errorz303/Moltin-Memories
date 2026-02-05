@@ -32,6 +32,7 @@
 
   "item.memories.shine_brush": "Shine Brush",
 
-  "death.attack.memories.molt" : "%1$s was pummeled to death"
+  "death.attack.memories.molt" : "%1$s was pummeled to death",
 
+  "itemgroup.memories.memory_items": "Molten Memories"
 }

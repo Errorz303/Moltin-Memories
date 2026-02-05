@@ -21,6 +21,10 @@ public class MoltingBlade extends SwordItem {
         target.setOnFireFor(4 + attacker.getRandom().nextInt(4));
         return super.postHit(stack, target, attacker);
     }
+    @Override
+    public int getEnchantability() {
+        return this.getMaterial().getEnchantability();
+    }
 
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {

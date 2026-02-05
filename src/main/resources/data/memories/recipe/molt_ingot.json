@@ -7,12 +7,15 @@
     },
     "E": {
       "item": "minecraft:gold_ingot"
+    },
+    "N": {
+      "item": "minecraft:netherite_scrap"
     }
   },
   "pattern": [
     "SSS",
-    "SEE",
-    "EE "
+    "SEN",
+    "EN "
   ],
   "result": {
     "count": 2,
