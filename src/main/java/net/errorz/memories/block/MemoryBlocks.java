@@ -13,13 +13,11 @@ import net.errorz.memories.block.custom.Overworld.SnifferFlowers;
 import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 
-import static net.minecraft.block.AbstractBlock.Settings.copy;
 import static net.minecraft.block.AbstractBlock.Settings.create;
 
 public class MemoryBlocks {
@@ -28,7 +26,7 @@ public class MemoryBlocks {
     public static final Block MOLTEN_MOLT = registerBlock("molten_molt",
             new Molt(AbstractBlock.Settings.copy(Blocks.HONEY_BLOCK).strength(0.2f).mapColor(MapColor.BRIGHT_RED).noCollision().luminance(blockstate->5)));
     public static final Block COOLED_MOLT = registerBlock("cooled_molt",
-            new Block(AbstractBlock.Settings.copy(Blocks.OBSIDIAN).strength(4f).requiresTool().sounds(BlockSoundGroup.HONEY).luminance(blockstate->5)));
+            new Block(AbstractBlock.Settings.copy(Blocks.OBSIDIAN).strength(0.5f).requiresTool().sounds(BlockSoundGroup.HONEY).luminance(blockstate->5)));
     public static final Block MOLTING_CURTAIN = registerBlock("molting_curtain", new MoltingCurtin(create().strength(2.5f, 2.5f).sounds(BlockSoundGroup.LANTERN).nonOpaque()));
     public static final Block ANCIENT_SALVIA = registerBlock("ancient_salvia",
             new SalviaFlower(AbstractBlock.Settings.create().luminance(blockstate->3).breakInstantly().sounds(BlockSoundGroup.FLOWERING_AZALEA).noCollision()));

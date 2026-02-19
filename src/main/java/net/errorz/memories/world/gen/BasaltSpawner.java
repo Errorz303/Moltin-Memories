@@ -13,8 +13,8 @@ import net.minecraft.world.biome.BiomeKeys;
 public class BasaltSpawner {
     public static void addSpawns() {
         BiomeModifications.addSpawn(
-                BiomeSelectors.includeByKey( BiomeKeys.BASALT_DELTAS,BiomeKeys.SOUL_SAND_VALLEY),
-                SpawnGroup.MONSTER, ModEntities.BASALT_BADGER, 10, 2, 5);
+                BiomeSelectors.includeByKey( BiomeKeys.BASALT_DELTAS),
+                SpawnGroup.MONSTER, ModEntities.BASALT_BADGER, 1, 1, 1);
         SpawnRestriction.register(ModEntities.BASALT_BADGER, SpawnLocationTypes.ON_GROUND,
                 Heightmap.Type.WORLD_SURFACE, TameableEntity::canMobSpawn);
 

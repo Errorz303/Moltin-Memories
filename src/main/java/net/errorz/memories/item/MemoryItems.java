@@ -3,7 +3,6 @@ package net.errorz.memories.item;
 import net.errorz.memories.AntiqueMemories;
 import net.errorz.memories.block.MemoryBlocks;
 import net.errorz.memories.entity.ModEntities;
-import net.errorz.memories.item.brush.*;
 import net.errorz.memories.item.custom.MoltingBlade;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -18,11 +17,10 @@ public class MemoryItems {
     public static final Item SOUL_PEPPER = registerItem("soul_pepper", new AliasedBlockItem(MemoryBlocks.SOUL_GENUS, new Item.Settings().food(ModFoodComponents.SOUL_PEPPER)));
     public static final Item SOUL_BEET = registerItem("soul_beet", new Item(new Item.Settings().food(ModFoodComponents.SOUL_PEPPER)));
     public static final Item SOUL_BEET_SEEDS = registerItem("soul_beet_seeds", new AliasedBlockItem(MemoryBlocks.SOUL_BEET, new Item.Settings()));
-    public static final Item SHINE_BRUSH = registerItem("shine_brush",  (new MemoryBrushItem((new Item.Settings()).maxDamage(128), 2)));
 
     public static final Item MOLTING_BLADE = registerItem("molting_blade",
             new MoltingBlade(ModToolMaterials.MOLTING, new Item.Settings()
-                    .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.MOLTING, 2, -2.3f))));
+                    .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.MOLTING, 2, -2.3f)).fireproof()));
 
     public static final Item BASALT_BADGER_SPAWN_EGG = registerItem("badger_spawn_egg",
             new SpawnEggItem(ModEntities.BASALT_BADGER, 0x89878f, 0xe96748, new Item.Settings()));

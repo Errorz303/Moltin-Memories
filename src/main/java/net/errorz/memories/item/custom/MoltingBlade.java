@@ -17,18 +17,13 @@ public class MoltingBlade extends SwordItem {
         super(toolMaterial, settings);
     }
     @Override
-    public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        target.setOnFireFor(4 + attacker.getRandom().nextInt(4));
-        return super.postHit(stack, target, attacker);
-    }
-    @Override
     public int getEnchantability() {
         return this.getMaterial().getEnchantability();
     }
 
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-        tooltip.add(Text.translatable("item.memories.molting_blade.tooltip").formatted(Formatting.GRAY));
+        tooltip.add(Text.translatable("item.memories.molting_blade.tooltip").formatted(Formatting.RED));
         super.appendTooltip(stack, context, tooltip, type);
     }
     public Text getName(ItemStack stack) {

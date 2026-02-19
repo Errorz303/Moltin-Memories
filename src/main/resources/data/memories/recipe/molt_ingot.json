@@ -13,12 +13,12 @@
     }
   },
   "pattern": [
-    "SSS",
-    "SEN",
-    "EN "
+    "SNN",
+    "NEE",
+    "EE "
   ],
   "result": {
-    "count": 2,
+    "count": 1,
     "id": "memories:molting_ingot"
   }
 }

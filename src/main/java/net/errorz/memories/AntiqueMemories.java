@@ -34,12 +34,10 @@ public class AntiqueMemories implements ModInitializer {
         MemoryItems.registerModItems();
         MemoryTab.registerItemGroups();
         ModEntities.registerModEntities();
-        ModLootTableModifiers.modifyLootTables();
 
         FabricDefaultAttributeRegistry.register(ModEntities.BASALT_BADGER, BasaltBadgerEntity.createAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.MOLT, MoltingEntity.createAttributes());
 
-        BasaltSpawner.addSpawns();
         ModFlowerGeneration.generateFlowers();
         LOGGER.info("Hello Fabric world!");
 	}

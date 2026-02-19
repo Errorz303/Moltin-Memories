@@ -13,20 +13,15 @@ import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
-import net.minecraft.entity.mob.Angerable;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.FluidState;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.registry.tag.FluidTags;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
 import net.minecraft.util.Util;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.LocalDifficulty;
@@ -38,16 +33,15 @@ import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.animatable.instance.SingletonAnimatableInstanceCache;
 import software.bernie.geckolib.animation.*;
 import net.minecraft.entity.ai.goal.*;
-import java.util.UUID;
 
 
-public class BasaltBadgerEntity extends TameableEntity implements Angerable, GeoEntity {
+public class BasaltBadgerEntity extends PassiveEntity implements GeoEntity {
     private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
     private static final TrackedData<Integer> DATA_ID_TYPE_VARIANT =
             DataTracker.registerData(BasaltBadgerEntity.class, TrackedDataHandlerRegistry.INTEGER);
     private Goal followChickenAndRabbitGoal;
 
-    public BasaltBadgerEntity(EntityType<? extends TameableEntity> entityType, World world) {
+    public BasaltBadgerEntity(EntityType<? extends PassiveEntity> entityType, World world) {
         super(entityType, world);
         this.setPathfindingPenalty(PathNodeType.WATER, -1.0F);
     }
@@ -77,15 +71,10 @@ public class BasaltBadgerEntity extends TameableEntity implements Angerable, Geo
         this.followChickenAndRabbitGoal = new ActiveTargetGoal(this, AnimalEntity.class, 10, false, false, (entity) -> entity instanceof ChickenEntity || entity instanceof RabbitEntity);
 
         this.goalSelector.add(1, new EscapeDangerGoal(this, 2.0));
-        this.goalSelector.add(2, new AnimalMateGoal(this, 1.0));
-        this.targetSelector.add(1, new TrackOwnerAttackerGoal(this));
-        this.targetSelector.add(2, new AttackWithOwnerGoal(this));
 
         this.targetSelector.add(3, new RevengeGoal(this).setGroupRevenge());
         this.goalSelector.add(3, new TemptGoal(this, 1.25, stack -> stack.isOf(Items.MAGMA_CREAM), false));
         this.goalSelector.add(3, new TemptGoal(this, 1.25, stack -> stack.isOf(Items.ICE), true));
-        this.goalSelector.add(4, new FollowParentGoal(this, 1.25));
-        this.goalSelector.add(4, new FollowOwnerGoal(this, 1.1D, 10f, 3f));
         this.goalSelector.add(4, new PounceAtTargetGoal(this, 0.4F));
 
         this.goalSelector.add(5, new MeleeAttackGoal(this, (double)1.0F, true));
@@ -93,39 +82,12 @@ public class BasaltBadgerEntity extends TameableEntity implements Angerable, Geo
         this.goalSelector.add(5, new WanderAroundFarGoal(this, 1.0));
         this.goalSelector.add(6, new LookAtEntityGoal(this, PlayerEntity.class, 6.0f));
         this.goalSelector.add(7, new LookAroundGoal(this));
-        this.targetSelector.add(8, new UniversalAngerGoal<>(this, true));
     }
 
     @Override
     public void tick() {
         super.tick();
 
-    }
-
-    @Override
-    public ActionResult interactMob(PlayerEntity player, Hand hand) {
-        ItemStack itemstack = player.getStackInHand(hand);
-        Item item = itemstack.getItem();
-
-        Item itemForTaming = Items.MAGMA_CREAM;
-
-        if(item == itemForTaming && !isTamed()) {
-            if(this.getWorld().isClient()) {
-                return ActionResult.CONSUME;
-            } else {
-                if (!player.getAbilities().creativeMode) {
-                    itemstack.decrement(1);
-                }
-
-                super.setOwner(player);
-                this.navigation.recalculatePath();
-                this.setTarget(null);
-                this.getWorld().sendEntityStatus(this, (byte)7);
-
-                return ActionResult.SUCCESS;
-            }
-        }
-        return super.interactMob(player, hand);
     }
     private PlayState predicate(AnimationState tAnimationState) {
         if(tAnimationState.isMoving()) {
@@ -153,15 +115,11 @@ public class BasaltBadgerEntity extends TameableEntity implements Angerable, Geo
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 4);
     }
 
-    @Override
-    public boolean isBreedingItem(ItemStack stack) {
-        return stack.isOf(Items.BEETROOT);
-    }
     public boolean canWalkOnFluid(FluidState state) {
         return state.isIn(FluidTags.LAVA);
     }
     public boolean hurtByWater() {
-        return false;
+        return true;
     }
 
     public boolean isOnFire() {
@@ -195,30 +153,6 @@ public class BasaltBadgerEntity extends TameableEntity implements Angerable, Geo
             this.playSound(SoundEvents.BLOCK_LAVA_POP, 1.0f, (float) (1.0f + this.random.nextGaussian() / 10f));
         }
         return false;
-    }
-    @Override
-    public int getAngerTime() {
-        return 0;
-    }
-
-    @Override
-    public void setAngerTime(int angerTime) {
-
-    }
-
-    @Override
-    public @Nullable UUID getAngryAt() {
-        return null;
-    }
-
-    @Override
-    public void setAngryAt(@Nullable UUID angryAt) {
-
-    }
-
-    @Override
-    public void chooseRandomAngerTime() {
-
     }
     @Override
     protected void initDataTracker(DataTracker.Builder builder) {
